@@ -1,6 +1,5 @@
 package tugas.pertemuan5;
 
-// Motor merupakan turunan dari Kendaraan, juga implements Perawatan
 public class Motor extends Kendaraan implements Perawatan {
     private String jenisMotor; // contoh: Matic, Sport, Bebek
 
@@ -17,7 +16,6 @@ public class Motor extends Kendaraan implements Perawatan {
         this.jenisMotor = jenisMotor;
     }
 
-    // Overriding tampilInfo() sesuai jenis Motor
     @Override
     public String tampilInfo() {
         return "Motor | Kode: " + getKodeKendaraan() + " | Merk: " + getMerk() + " | Warna: " + getWarna()

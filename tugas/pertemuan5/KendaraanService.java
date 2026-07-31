@@ -14,7 +14,7 @@ public class KendaraanService {
         kategoriKendaraan.put("Motor", 0);
     }
 
-    // Overload 1: tambah Mobil dengan parameter lengkap
+    // Overload 1: tambah Mobil 
     public void tambahKendaraan(String kodeKendaraan, String merk, String warna, double harga, int jumlahPintu) {
         Mobil mobil = new Mobil(kodeKendaraan, merk, warna, harga, jumlahPintu);
         daftarKendaraan.add(mobil);
@@ -22,7 +22,7 @@ public class KendaraanService {
         System.out.println("Data mobil berhasil ditambahkan.");
     }
 
-    // Overload 2: tambah Motor dengan parameter lengkap
+    // Overload 2: tambah Motor 
     public void tambahKendaraan(String kodeKendaraan, String merk, String warna, double harga, String jenisMotor) {
         Motor motor = new Motor(kodeKendaraan, merk, warna, harga, jenisMotor);
         daftarKendaraan.add(motor);
@@ -84,7 +84,7 @@ public class KendaraanService {
         System.out.println("Jumlah Motor: " + kategoriKendaraan.get("Motor"));
     }
 
-    // Manfaatin interface Perawatan untuk semua kendaraan yang ada di daftar
+    // interface Perawatan untuk semua kendaraan yang ada di daftar
     public void cekPerawatanSemua() {
         if (daftarKendaraan.isEmpty()) {
             System.out.println("Belum ada data kendaraan.");

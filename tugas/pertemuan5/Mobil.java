@@ -1,6 +1,5 @@
 package tugas.pertemuan5;
 
-// Mobil merupakan turunan dari Kendaraan, juga implements Perawatan
 public class Mobil extends Kendaraan implements Perawatan {
     private int jumlahPintu;
 
@@ -17,7 +16,6 @@ public class Mobil extends Kendaraan implements Perawatan {
         this.jumlahPintu = jumlahPintu;
     }
 
-    // Overriding tampilInfo() sesuai jenis Mobil
     @Override
     public String tampilInfo() {
         return "Mobil | Kode: " + getKodeKendaraan() + " | Merk: " + getMerk() + " | Warna: " + getWarna()
