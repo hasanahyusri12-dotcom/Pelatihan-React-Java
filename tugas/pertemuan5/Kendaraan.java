@@ -1,6 +1,4 @@
 package tugas.pertemuan5;
-
-// Abstract class sebagai induk dari Mobil dan Motor
 public abstract class Kendaraan {
     private String kodeKendaraan;
     private String merk;
@@ -14,7 +12,6 @@ public abstract class Kendaraan {
         this.harga = harga;
     }
 
-    // Getter
     public String getKodeKendaraan() {
         return kodeKendaraan;
     }
@@ -31,7 +28,7 @@ public abstract class Kendaraan {
         return harga;
     }
 
-    // Setter, semua pakai keyword this
+    
     public void setKodeKendaraan(String kodeKendaraan) {
         this.kodeKendaraan = kodeKendaraan;
     }
@@ -48,6 +45,5 @@ public abstract class Kendaraan {
         this.harga = harga;
     }
 
-    // Abstract method, wajib diimplementasikan tiap class turunan
     public abstract String tampilInfo();
 }

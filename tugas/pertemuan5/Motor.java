@@ -1,7 +1,7 @@
 package tugas.pertemuan5;
 
 public class Motor extends Kendaraan implements Perawatan {
-    private String jenisMotor; // contoh: Matic, Sport, Bebek
+    private String jenisMotor; 
 
     public Motor(String kodeKendaraan, String merk, String warna, double harga, String jenisMotor) {
         super(kodeKendaraan, merk, warna, harga);
