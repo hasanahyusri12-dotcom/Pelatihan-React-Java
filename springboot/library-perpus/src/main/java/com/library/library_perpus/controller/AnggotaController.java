@@ -2,7 +2,7 @@ package com.library.library_perpus.controller;
 
 import com.library.library_perpus.entity.Anggota;
 import com.library.library_perpus.service.AnggotaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +13,14 @@ import java.util.List;
 @RequestMapping("/api/anggota")
 public class AnggotaController {
 
-    @Autowired
-    private AnggotaService anggotaService;
+    private final AnggotaService anggotaService;
+
+    public AnggotaController(AnggotaService anggotaService) {
+        this.anggotaService = anggotaService;
+    }
 
     @PostMapping
-    public ResponseEntity<Anggota> create(@RequestBody Anggota anggota) {
+    public ResponseEntity<Anggota> create(@Valid @RequestBody Anggota anggota) {
         Anggota saved = anggotaService.create(anggota);
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
@@ -35,7 +38,7 @@ public class AnggotaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Anggota> update(@PathVariable Long id, @RequestBody Anggota anggota) {
+    public ResponseEntity<Anggota> update(@PathVariable Long id, @Valid @RequestBody Anggota anggota) {
         try {
             Anggota updated = anggotaService.update(id, anggota);
             return ResponseEntity.ok(updated);
